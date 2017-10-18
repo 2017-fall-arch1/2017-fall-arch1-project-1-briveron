@@ -1,8 +1,7 @@
 #include <stdio.h>		/* for puts,  */
 #include <stdlib.h> 		/* for malloc */
 #include <assert.h>		/* for assert */
-#include "llist.h"
-#include <string.h>
+#include "llist.h"		
 
 int llDoCheck = 1;		/* set true for paranoid consistency checking */
 
@@ -15,15 +14,6 @@ LList *llAlloc()
   lp->first = lp->last = 0;
   doCheck(lp);
   return lp;
-}
-
-LList *newTree(){
-    
-    printf("  Hey  \n");
-    LList *root = (LList *)malloc(sizeof(LList));
-    root->right = root->left = NULL;
-    root->count=0;
-    return root;
 }
 
 /* recycle a list, discarding all items it contains */
@@ -83,29 +73,7 @@ void llPut(LList *lp, char *s)
   doCheck(lp);
 }
 
-/*
-
-LList *addTree(LList *p, char *w){
-    int cond;
-    
-    if(p == NULL){
-        p=newTree();
-        p->str=strdup(w);
-        p->count=1;
-        p->left=p->right=NULL;
-    } else if ((cond=strcmp(w,p->str))==0)
-        p->count++;
-    else if (cond<0)
-        p->left=addTree(p->left,w);
-    else
-        p->right=addTree(p->right,w);
-    return p;
-}
-*/
-
-
 /* print list membership.  Prints default mesage if message is NULL */
-
 void llPrint(LList *lp, char *msg)
 {
   LLItem *ip;

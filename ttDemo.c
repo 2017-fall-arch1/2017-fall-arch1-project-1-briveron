@@ -1,12 +1,12 @@
+
 #include <stdio.h>		/* for printf */
 #include <stdlib.h>		/* for free() */
 #include <string.h> 		/* for strlen */
-#include "llist.h"		/* for list operations */
+#include "Tree.h"		/* for list operations */
 
 
 /* read no more than limit chars into s, return #chars read.  Doesn't include trailing \n */
-int gets_n(char *s, int limit)	
-{
+int gets_n(char *s, int limit){
   char *p = s;			/* for indexing into s */
   char c;
   if (fgets(s, limit, stdin)) {
@@ -18,25 +18,27 @@ int gets_n(char *s, int limit)
   return (p - s);		/* #chars read (not including terminator or \n*/
 }
 
-int main()
-{
+int main(){
   char buf[100];
-  LList *lp = llAlloc();	/* make empty list */
-  LList *root = newTree();
+  TREE *lp = ttAlloc();
 
-  llPrint(lp, "List contents, prior to reading input:");
 
-  while (gets_n(buf, 100))	/* build list */
-    llPut(lp, buf);
+  printf("This program will place your names in a Tree Structure \n");
+  
+ 
 
-  llPrint(lp, "List contents, after building list:");
+  while (gets_n(buf, 100)){	
+    printf("Place your names now or enter Exit \n");
+    if(strcmp(buf,"Exit")==0){
+      break;
+    }
+    Insert(lp,buf);
+  }
+ 
+  printOne(lp);
 
-  llMakeEmpty(lp);
 
-  printf("After emptying the list...");
-  llPrint(lp, 0);		/* default message */
-
-  llFree(lp);
-
+  printf("This is the end of the program   \n");
+  
   return 0;
 }

@@ -1,8 +1,9 @@
-
 #include <stdio.h>		/* for printf */
 #include <stdlib.h>		/* for free() */
 #include <string.h> 		/* for strlen */
 #include "Tree.h"		/* for list operations */
+
+/*The following code was made using the structure of the given code from git and with the help of Migule<3, Julie<3, Robert<3 This code is for the submission of Brian Riveron*/
 
 
 /* read no more than limit chars into s, return #chars read.  Doesn't include trailing \n */

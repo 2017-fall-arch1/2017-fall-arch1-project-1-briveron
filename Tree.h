@@ -18,7 +18,7 @@ typedef struct {
 
 void Insert(TREE *root, char *name);
 
-void printOne(TREE *t);
+void printOne(TREE *r);
 
 void printTwo(Stem *lp);
 

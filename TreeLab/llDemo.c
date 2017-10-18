@@ -22,7 +22,6 @@ int main()
 {
   char buf[100];
   LList *lp = llAlloc();	/* make empty list */
-  LList *root = newTree();
 
   llPrint(lp, "List contents, prior to reading input:");
 

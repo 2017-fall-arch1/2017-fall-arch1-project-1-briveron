@@ -6,7 +6,7 @@ CFLAGS=-g -O3
 #   $@ is the production's target
 #   $^ are the production's prerequisites
 
-ttDemo: Tree.o Tree.o
+ttDemo: Tree.o ttDemo.o
 	cc -o $@ $^
 
 Tree.o: Tree.c Tree.h
@@ -20,3 +20,4 @@ clean:
 
 demo: ttDemo
 	(echo first; echo "second line"; echo "third and last") | ./ttDemo
+

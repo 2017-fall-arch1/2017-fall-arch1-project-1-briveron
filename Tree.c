@@ -1,8 +1,8 @@
 #include <stdio.h>		/* for puts,  */
 #include <stdlib.h> 		/* for malloc */
-#include <assert.h>     /* for assert */
+#include <assert.h>/* for assert */
 #include <string.h>
-#include "Tree.h"
+#include "Tree.h"		
 
 int ttDoCheck = 1;		/* set true for paranoid consistency checking */
 
@@ -18,7 +18,7 @@ TREE *ttAlloc()
 
 /* print list membership.  Prints default mesage if message is NULL */
 
-void Insert(TREE *r,char *n){
+void Insert(TREE *r,char *name){
     
     int length;
     char *hold;
@@ -27,11 +27,11 @@ void Insert(TREE *r,char *n){
     
     first = (Stem *)malloc(sizeof(Stem));
 
-    for(length=0;n[length];length++);
+    for(length=0;name[length];length++);
     
         hold =(char *)malloc(length+1);
-    for(length=0;n[length];length++);
-        hold[length]=n[length];
+    for(length=0;name[length];length++);
+        hold[length]=name[length];
         
     hold[length]=0;
 
@@ -45,17 +45,21 @@ void Insert(TREE *r,char *n){
 Stem* addBranch(Stem *r,Stem *n){
 
 
+  // printf("add a branch");
+
   if(r==NULL){
     return n;
   }
-  int compare=strcmp(n->str,r->str);
+  int comp=strcmp(n->str,r->str);
 
-  if(0 > compare){
+  if(0>comp){
     r->left=addBranch(r->left, n);
   }
   else{
     r->right=addBranch(r->right, n);
   }
+
+
   // printf("end of add branch");
   return r;
   
@@ -67,13 +71,11 @@ void printOne(TREE *t){
     printTwo(t->root);
 }
 
-void printTwo(Stem *p){
-  if(p != NULL){
-      printTwo(p->left);
-      printf(" %s\n ", p->str);
-      printTwo(p->right);
+void printTwo(Stem *lp){
+  if(lp!=NULL){
+      printTwo(lp->left);
+      printf("%s\n",lp->str);
+      printTwo(lp->right);
   }
-  
-  printf("End of print\n");
 }
 
