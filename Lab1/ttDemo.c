@@ -30,9 +30,9 @@ int main(){
 
   while (gets_n(buf, 100)){	
     printf("Place your names now or enter Exit \n");
-    if(strcmp(buf,"Exit")==0){
-      break;
-    }
+    //if(strcmp(buf,"Exit")==0){
+     // break;
+    //}
     Insert(lp,buf);
   }
  

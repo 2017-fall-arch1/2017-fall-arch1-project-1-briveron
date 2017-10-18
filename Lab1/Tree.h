@@ -1,6 +1,6 @@
 #ifndef Tree_included		/* prevent multiple inclusion */
 #define Tree_included
-
+/*The following code was made using the structure of the given code from git and with the help of Migule<3, Julie<3, Robert<3 This code is for the submission of Brian Riveron*/
 
 /* a linked-list item */
 typedef struct Stem_ {

@@ -4,6 +4,8 @@
 #include <string.h>
 #include "Tree.h"
 
+/*The following code was made using the structure of the given code from git and with the help of Migule<3, Julie<3, Robert<3 This code is for the submission of Brian Riveron*/
+
 int ttDoCheck = 1;		/* set true for paranoid consistency checking */
 
 #define doCheck(_lp) (ttDoCheck && ttCheck(_lp))
@@ -27,11 +29,14 @@ void Insert(TREE *r,char *n){
     
     first = (Stem *)malloc(sizeof(Stem));
 
-    for(length=0;n[length];length++);
+    for(length=0;n[length];length++){
+        
+    }
     
-        hold =(char *)malloc(length+1);
-    for(length=0;n[length];length++);
+    hold =(char *)malloc(length+1);
+    for(length=0;n[length];length++){
         hold[length]=n[length];
+    }
         
     hold[length]=0;
 
@@ -70,10 +75,10 @@ void printOne(TREE *t){
 void printTwo(Stem *p){
   if(p != NULL){
       printTwo(p->left);
-      printf(" %s\n ", p->str);
+      printf("%s\t ", p->str);
+      //printf(" %4d %s \n ", p->str);
       printTwo(p->right);
   }
   
-  printf("End of print\n");
+  //printf("End of print\n");
 }
-
