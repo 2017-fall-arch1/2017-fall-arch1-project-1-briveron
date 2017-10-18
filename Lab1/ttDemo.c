@@ -31,15 +31,15 @@ int main(){
 
   while (gets_n(buf, 100)){	
     printf("Place your names now or enter Exit \n");
-    //if(strcmp(buf,"Exit")==0){
-     // break;
-    //}
+    if(strcmp(buf,"Exit")==0){
+      break;
+    }
     Insert(lp,buf);
   }
  
   printOne(lp);
 
-
+  printf("\n");
   printf("This is the end of the program   \n");
   
   return 0;
