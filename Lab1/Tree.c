@@ -45,7 +45,7 @@ void Insert(TREE *r,char *name){
 Stem* addBranch(Stem *r,Stem *n){
 
 
-  printf("add a branch");
+  // printf("add a branch");
 
   if(r==NULL){
     return n;
@@ -60,7 +60,7 @@ Stem* addBranch(Stem *r,Stem *n){
   }
 
 
-  printf("end of add branch");
+  // printf("end of add branch");
   return r;
   
 
