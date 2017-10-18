@@ -22,6 +22,7 @@ int gets_n(char *s, int limit){
 int main(){
   char buf[100];
   TREE *lp = ttAlloc();
+  
 
 
   printf("This program will place your names in a Tree Structure \n");

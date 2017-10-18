@@ -20,7 +20,7 @@ void Insert(TREE *root, char *name);
 
 void printOne(TREE *t);
 
-void printTwo(Stem *lp);
+void printTwo(Stem *lp, FILE *fp);
 
 TREE *ttAlloc();
 

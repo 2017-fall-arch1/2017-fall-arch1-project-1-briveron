@@ -16,7 +16,7 @@ ttDemo.o: ttDemo.c Tree.h
 	cc -c $(CFLAGS) ttDemo.c
 
 clean:
-	rm -f *.o ttDemo
+	rm -f *.o ttDemo Tree.txt
 
 demo: ttDemo
 	(echo first; echo "second line"; echo "third and last") | ./ttDemo

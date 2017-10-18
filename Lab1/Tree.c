@@ -69,15 +69,23 @@ Stem* addBranch(Stem *r,Stem *n){
 
 
 void printOne(TREE *t){
-    printTwo(t->root);
+    
+    /*File writer was taken from this example on the website https://www.tutorialspoint.com/cprogramming/c_file_io.htm  */
+    
+    FILE *fp;//makes a file type 
+    fp=fopen("Tree.txt", "w+");//names it and places it in some specified location 
+    
+    printTwo(t->root, fp);
+    
 }
 
-void printTwo(Stem *p){
+void printTwo(Stem *p, FILE *fp){
   if(p != NULL){
-      printTwo(p->left);
+      printTwo(p->left,fp);
       printf("%s\t ", p->str);
+      fprintf(fp,"%s \n", p->str);
       //printf(" %4d %s \n ", p->str);
-      printTwo(p->right);
+      printTwo(p->right,fp);
   }
   
   //printf("End of print\n");
